@@ -1,2 +1,2 @@
 # KotlinTest
-KotlinTest
+KotlinTestCode
