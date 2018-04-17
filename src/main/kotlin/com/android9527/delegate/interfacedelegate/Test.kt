@@ -7,23 +7,23 @@ package com.android9527.delegate.interfacedelegate
 fun main(args: Array<String>) {
 
     val carDriver = CarDriver()
-    val guoQi = CEO(carDriver)
-    guoQi.drive()
+    val xiaoMing = Boss(carDriver)
+    xiaoMing.drive()
 }
 
 /**
  *  赋予开车的能力
  */
-open class CarDriver : IDriver {
+class CarDriver : IDriver {
     override fun drive() {
         println("CarDriver 开车")
     }
 }
 
-//class CEO(val carDriver: CarDriver) : IDriver {
+//class Boss(val carDriver: CarDriver) : IDriver {
 //    override fun drive() {
 //        carDriver.drive()
 //    }
 //}
 
-class CEO(val carDriver: CarDriver) : IDriver by carDriver
+class Boss(val carDriver: CarDriver) : IDriver by carDriver

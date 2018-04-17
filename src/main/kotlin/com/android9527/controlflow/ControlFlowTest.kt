@@ -4,14 +4,9 @@ package com.android9527.controlflow
  * Created by chenfeiyue on 17/7/28.
  * Description:
  */
-class ControlFlowTest {
-    companion object {
-        @JvmStatic
-        fun main(args: Array<String>) {
-            testWhen()
-            testFor()
-        }
-    }
+fun main(args: Array<String>) {
+//    testWhen()
+    testFor()
 }
 
 /**
@@ -21,7 +16,6 @@ fun testIf() {
     val a: Int = 1
     val b: Int = 1
     var max = if (a > b) a else b
-
 
     max =
             if (a > b) {
@@ -39,6 +33,14 @@ fun testWhen() {
     when (x) {
         1 -> println("x == 1")
         2 -> println("x == 2")
+        else -> {
+            println("x is neither 1 nor 2")
+        }
+    }
+
+    when {
+        x == 1 -> println("x == 1")
+        x > 9 -> println("x == 2")
         else -> {
             println("x is neither 1 nor 2")
         }

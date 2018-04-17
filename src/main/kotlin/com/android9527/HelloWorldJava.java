@@ -1,9 +1,6 @@
 package com.android9527;
 
-import com.android9527.entity.People;
-import com.android9527.extend.ExtendTestKt;
-
-import java.math.BigDecimal;
+import com.android9527.extension.ExtendTestKt;
 
 /**
  * Created by chenfeiyue on 17/12/13.
@@ -16,18 +13,22 @@ public class HelloWorldJava {
     }
 
     private static void test(int... arg) {
-        People people = new People("zhangsan", 19);
-        people.copy("zhangsan", 19);
-
         // java 调用kotlin扩展函数
         System.out.println(ExtendTestKt.multiply("abc", 3));
 
-        double d = 1.0d;
+        int i1 = 0x10000000;
+        int i2 = 0x20000000;
+        int i3 = 0x30000000;
+        int i4 = 0x40000000;
+        int i5 = 0x50000000;
 
-        float f = 1.0f;
+        int i = i1 | i2 | i3;
+        System.out.println(i);
+        System.out.println(i & i1);
+        System.out.println(i & i4);
+        System.out.println(i & i5);
 
-//        String s = "abc".bd;
-//        BigDecimal bd = ExtendTestKt.getBd("abc");
-
+        String s = null;
+        HelloWorldKt.put(s);
     }
 }

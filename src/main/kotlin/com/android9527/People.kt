@@ -17,6 +17,7 @@ class People3(name: String) {
         println("initialize")
         this.name = name
     }
+
 }
 // 如果类有一个主构造函数（无论有无参数），每个次构造函数需要直接或间接委托给主构造函数，用this关键字
 class People4 {
@@ -27,4 +28,11 @@ class People4 {
     }
     constructor(name: String, age: Int) : this(name) {
     }
+}
+
+open class Foo {
+    open val x: Int get() = 1
+}
+class Bar1 : Foo() {
+    override val x: Int = 3
 }

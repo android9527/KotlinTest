@@ -17,8 +17,12 @@ class Test {
      * 3.lateinit可以在任何位置初始化并且可以初始化多次。
      * 而lazy在第一次被调用时就被初始化，想要被改变只能重新定义
      */
+    lateinit var value: String
 
-    lateinit var s: String
+
+    init {
+        value = ""
+    }
 
     val hello by lazy(LazyThreadSafetyMode.SYNCHRONIZED) {
         println("hello by lazy")
@@ -40,10 +44,9 @@ fun main(args: Array<String>) {
  * 具体实现
  */
 class Delegate {
-
     var value : String? = null
     operator fun getValue(thisRef: Any?, property: KProperty<*>): String {
-        println(property.name)
+//        println(property.name)
         return value ?: "default value"
     }
 

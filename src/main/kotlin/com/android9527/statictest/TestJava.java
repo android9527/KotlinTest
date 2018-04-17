@@ -8,5 +8,7 @@ public class TestJava {
     public static void main(String[] args) {
         String tag = CompanionTest.TAG;
         ObjectTest.INSTANCE.test();
+//        CompanionTest.Companion.getInstance();
+        CompanionTest.getInstance();
     }
 }

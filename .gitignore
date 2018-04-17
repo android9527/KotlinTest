@@ -40,3 +40,5 @@ hs_err_pid*
 
 /kotlin_moudle/build/
 /.idea/
+!/out/
+/out/

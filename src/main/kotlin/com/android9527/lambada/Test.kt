@@ -12,4 +12,10 @@ fun main(args: Array<String>) {
 
         }
     })
+
+    Thread {
+        println(Thread.currentThread().name)
+    }.start()
+
+    Thread(Runnable { println(Thread.currentThread().name) }).start()
 }

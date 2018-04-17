@@ -5,17 +5,13 @@ package com.android9527.interfacetest
  * Description:
  */
 fun main(args: Array<String>) {
-    val z : IDriver = ZhangSan()
+    val z : IDriver = CarDriver()
     z.drive()
 }
 
-
-class ZhangSan : IDriver{
+class CarDriver : IDriver{
     override fun drive() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getName() {
     }
     override var age: Int
         get() = TODO("not implemented") //To change initializer of created properties use File | Settings | File Templates.
