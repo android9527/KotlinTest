@@ -27,6 +27,9 @@ fun testIf() {
             }
 }
 
+/**
+ * when表达式，替代Java switch
+ */
 fun testWhen() {
     // 1、简单用法
     val x: Int = 1

@@ -1,5 +1,7 @@
 package com.android9527.lambada
 
+import java.util.concurrent.Executors
+
 /**
  * Created by chenfeiyue on 18/2/7.
  * Description:
@@ -18,4 +20,9 @@ fun main(args: Array<String>) {
     }.start()
 
     Thread(Runnable { println(Thread.currentThread().name) }).start()
+
+
+
+    Executors.newCachedThreadPool().execute { }
+
 }

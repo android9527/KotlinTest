@@ -11,12 +11,18 @@ import com.android9527.lambada.View
  * 对象表达式用来替代Java的匿名内部类
  */
 class Outer {
+    constructor() {
+        println("constructor")
+    }
     val helloWorld = "Hello World"
 
     inner class Inner {
         fun getOuter(): Outer {
             return this@Outer
         }
+    }
+    init {
+        println("init")
     }
 }
 

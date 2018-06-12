@@ -28,7 +28,9 @@ class Test {
         println("hello by lazy")
         "Hello World"
     }
-    val x : String by Delegate()
+
+
+    val x: String by Delegate()
     var y by Delegate()
 }
 
@@ -44,13 +46,16 @@ fun main(args: Array<String>) {
  * 具体实现
  */
 class Delegate {
-    var value : String? = null
+    var value: String? = null
     operator fun getValue(thisRef: Any?, property: KProperty<*>): String {
 //        println(property.name)
+
+        // 读取缓存、数据库等
         return value ?: "default value"
     }
 
     operator fun setValue(any: Any?, property: KProperty<*>, value: String?) {
         this.value = value
+        // 写入缓存等
     }
 }

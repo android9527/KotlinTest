@@ -14,17 +14,25 @@ import java.math.BigDecimal
 fun main(args: Array<String>) {
     val string = "abc"
     println(string.isNotEmpty())
+
     println(string.multiply(3))
     println(string multiply 3)
 
-//    println(string.times(3))
-//    println(string * 3)
+    println(string times 3)
+    println(string * 3)
 
-    val a = "11".bd
-    val b = BigDecimal(22)
 
-    println(a.add(b))
+    // 属性扩展
+    val s1 = "11".bd
+    val s2 = "22".bd
+
+    println(s1.times(s2))
+    println(s1.add(s2))
+
 }
+
+val String.bd: BigDecimal
+    get() = BigDecimal(this)
 
 /**
  * String 函数扩展
@@ -39,6 +47,9 @@ infix fun String.multiply(time: Int): String {
     return stringBuffer.toString()
 }
 
+/**
+ * 操作符重载
+ */
 operator infix fun String.times(time: Int): String {
     return this.multiply(time)
 }
@@ -55,7 +66,7 @@ fun String.toString(): String {
  * java 调用扩展成员相当于调用静态方法
  * BigDecimal bd = ExtendTestKt.getBd("11");
  */
-val String.bd: BigDecimal
-    get() = BigDecimal(this)
-//    set(value) {}
-
+//val String.bd: BigDecimal
+//    get() = BigDecimal(this)
+////    set(value) {}
+//

@@ -1,25 +1,50 @@
 package com.android9527
 
-import com.android9527.extension.bd
 import org.jetbrains.annotations.NotNull
 
 /**
  * Created by chenfeiyue on 17/12/13.
- * Description:
+ * Description: 基本语法
  * /** */
  */
 fun main(args: Array<String>) {
-    val a: Short = 0
-    val s: String? = null    // 可空类型
-//    println(s.length)      // 编译错误
-    println(s?.length)
-    val string = s ?: return
-    println("ss not null \$ $string")
-    println("result is ${string.replace(" ", "")}")
+
+    val i: Int = 3
+    println(i.javaClass)
+    println(i)
+
+    var nickname: String //如果变量声明的时候没有初始化，就必须要指明类型
+
+
+    val string: String? = null   // 可空类型
+
+//    println(string.length)      // 编译错误
+//    如果不为空则... 的简写 ?.
+    println(string?.length)
+
+    /**
+     * !!表达式 当 string 为 null 时，抛出一个 NPE，否则返回 string 的长度值。
+     */
+//    println(string!!.length)
+
 
     // 尽管val引用自身是不可变的，但是它指向的对象可能是可变的
     val list = arrayListOf("Java")
     list.add("Kotlin")
+
+
+    /**
+     * 字符串模板
+     */
+    println("ss not null $string")
+    println("result is ${string?.replace(" ", "")}")
+
+    /**
+     *  引用原⽣字符串 使⽤三个引号（ """ ） 分界符括起来， 内部没有转义并且可以包含换⾏和任何其他字符:
+     */
+    println("""
+
+    """)
 
     val name: String = "abc"
     val `object`: String = "abc"
@@ -29,28 +54,34 @@ fun main(args: Array<String>) {
     println(name == name1)
     println(name === name1)
 
-    test(1, 2, 3)
-
-    println("i(3,5) is ${i(3, 5)}")
-    val aaa = "11".bd
-
-    // 这是⼀个⾏注释
+    // 这是⼀个单⾏注释
     /* 这是⼀个多⾏的
      块注释。 */
+
     /** /** */ */
-    for (c in name) {
-        println(c)
+
+    /**
+     * 变长参数
+     */
+    test(1, 2, 3, string = "")
+    println("i(3,5) is ${sum(3, 5)}")
+}
+
+
+/**
+ * 智能类型转换
+ */
+fun smartCast(any: Any) {
+    if (any is String) {
+        /**
+         * any instanceof String
+         * String string = (String)any
+         * string.getName()
+         */
+        println(any.length) // any is automatically cast to String
     }
 }
 
-/**
- * Kotlin 有两种类型的字符串字⾯值: 转义字符串, 以及原⽣字符串可以包含换⾏和任意⽂本。转义字符串很像 Java 字符串:
- */
-val s = "Hello, world!\n"
-
-/**
- *  引用原⽣字符串 使⽤三个引号（ """ ） 分界符括起来， 内部没有转义并且可以包含换⾏和任何其他字符:
- */
 fun add(x: Int, y: Int): Int {
     return x + y
 }
@@ -60,12 +91,12 @@ fun add(x: Int, y: Int): Int {
  */
 fun sum(x: Int, y: Int): Int = x + y
 
-val i = { x: Int, y: Int -> x + y }
+val sum = { x: Int, y: Int -> x + y }
 
 /**
  * kotlin 变长参数
  */
-fun test(vararg arg: Int): Int {
+fun test(vararg arg: Int, string: String): Int {
     var sum = 0
     arg.forEach { n ->
         sum += n
@@ -75,7 +106,6 @@ fun test(vararg arg: Int): Int {
 
 @NotNull
 fun put(name: String) {
-
     print(name)
 }
 

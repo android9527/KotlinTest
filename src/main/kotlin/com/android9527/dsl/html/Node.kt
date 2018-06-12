@@ -7,3 +7,8 @@ package com.android9527.dsl.html
 interface Node {
     fun render()
 }
+
+
+fun main(args: Array<String>) {
+    Thread { println() }.start()
+}

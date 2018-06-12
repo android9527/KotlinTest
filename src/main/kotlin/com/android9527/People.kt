@@ -13,9 +13,12 @@ class People2 public constructor(name: String) {
 //若主构造函数中，不进行初始化, 可放在init{}中
 class People3(name: String) {
     val name: String
+        get(){
+            println("name------------>")
+            return ""
+        }
     init {
         println("initialize")
-        this.name = name
     }
 
 }
