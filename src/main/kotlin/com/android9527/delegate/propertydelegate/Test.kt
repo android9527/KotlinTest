@@ -5,8 +5,9 @@ import kotlin.reflect.KProperty
 /**
  * Created by chenfeiyue on 18/2/12.
  * Description: 属性代理
+ * 语法结构是： val/var <property name>: <Type> by <expression> 在 by 后面的属性就是代理，
+ * 这样这个属性的 get() 和 set() 方法就代理给了它。
  */
-
 class Test {
 
     /**
@@ -28,7 +29,6 @@ class Test {
         println("hello by lazy")
         "Hello World"
     }
-
 
     val x: String by Delegate()
     var y by Delegate()

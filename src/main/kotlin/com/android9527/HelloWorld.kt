@@ -65,6 +65,11 @@ fun main(args: Array<String>) {
      */
     test(1, 2, 3, string = "")
     println("i(3,5) is ${sum(3, 5)}")
+
+
+    1 + 2 shl 2
+
+    1 shl 2 + 3 and 1 shl (2 + 3)
 }
 
 
@@ -89,7 +94,7 @@ fun add(x: Int, y: Int): Int {
 /**
  * 函数表达式
  */
-fun sum(x: Int, y: Int): Int = x + y
+inline fun sum(x: Int, y: Int): Int = x + y
 
 val sum = { x: Int, y: Int -> x + y }
 
