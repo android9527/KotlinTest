@@ -42,7 +42,7 @@ fun testWhen() {
     }
 
     when {
-        x == 1 -> println("x == 1")
+        x == 1 || x == 0 -> println("x == 1 or x == 0")
         x > 9 -> println("x == 2")
         else -> {
             println("x is neither 1 nor 2")

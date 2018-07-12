@@ -6,7 +6,7 @@ package com.android9527.interfacetest;
  */
 public interface IDriverJava {
 
-    int age = 25;
+    int AGE = 25;
 
     void drive();
 

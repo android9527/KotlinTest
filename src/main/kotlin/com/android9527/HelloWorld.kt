@@ -7,16 +7,31 @@ import org.jetbrains.annotations.NotNull
  * Description: 基本语法
  * /** */
  */
-fun main(args: Array<String>) {
 
+// 编译时常量 public static final int a = 100
+const val a = 100
+
+fun main(args: Array<String>) {
+    fun test() {
+        println()
+    }
+    test()
+
+    // 运行时常量，不可重新赋值，可以通过一些手段修改
     val i: Int = 3
-    println(i.javaClass)
     println(i)
 
-    var nickname: String //如果变量声明的时候没有初始化，就必须要指明类型
+    var nickName: String = "name" //如果变量声明的时候没有初始化，就必须要指明类型
 
+    // nickName.charAt(2)
+    nickName[2]
 
-    val string: String? = null   // 可空类型
+    // String迭代
+    for (c in nickName) {
+        println(c)
+    }
+    var string: String?   // 可空类型
+    string = null
 
 //    println(string.length)      // 编译错误
 //    如果不为空则... 的简写 ?.
@@ -32,7 +47,6 @@ fun main(args: Array<String>) {
     val list = arrayListOf("Java")
     list.add("Kotlin")
 
-
     /**
      * 字符串模板
      */
@@ -43,7 +57,8 @@ fun main(args: Array<String>) {
      *  引用原⽣字符串 使⽤三个引号（ """ ） 分界符括起来， 内部没有转义并且可以包含换⾏和任何其他字符:
      */
     println("""
-
+/** /**
+yj\n*/ */
     """)
 
     val name: String = "abc"
@@ -71,6 +86,10 @@ fun main(args: Array<String>) {
 
     1 shl 2 + 3 and 1 shl (2 + 3)
 }
+
+//fun getName(): String {
+//    return null
+//}
 
 
 /**
@@ -118,6 +137,21 @@ fun put(name: String) {
 // java private protected friendly public
 // 在Kotlin编程中有四种修饰词：private,protected,internal,public，
 // 默认的修饰词是public。这些修饰词可以用在类，对象，接口，构造函数，属性上
+
+
+fun test1() {
+    val i = 127
+
+    var a: Int? = i
+    var b: Int? = i
+
+    println(a === b)
+    val j = 128
+
+    var c: Int? = j
+    var d: Int? = j
+    println(c === d)
+}
 
 
 

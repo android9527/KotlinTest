@@ -58,4 +58,5 @@ class Delegate {
         this.value = value
         // 写入缓存等
     }
+
 }

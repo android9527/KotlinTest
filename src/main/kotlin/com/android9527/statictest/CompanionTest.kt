@@ -19,7 +19,7 @@ class CompanionTest {
         @JvmField val TAG = "CompanionTest"
         @JvmStatic fun getInstance(): CompanionTest {
             if (null == singleton) {
-                synchronized(CompanionTest::class.java) {
+                synchronized(lock = CompanionTest::class.java) {
                     if (null == singleton) {
                         singleton = CompanionTest()
                     }

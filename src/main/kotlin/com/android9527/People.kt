@@ -17,9 +17,6 @@ class People3(name: String) {
             println("name------------>")
             return ""
         }
-    init {
-        println("initialize")
-    }
 
 }
 // 如果类有一个主构造函数（无论有无参数），每个次构造函数需要直接或间接委托给主构造函数，用this关键字
@@ -28,8 +25,14 @@ class People4 {
         println("constructor")
     }
     constructor(name: String) : this() {
+        println("name")
     }
     constructor(name: String, age: Int) : this(name) {
+        println("ame: String, age: Int")
+    }
+
+    init {
+        println("initialize")
     }
 }
 
@@ -38,4 +41,8 @@ open class Foo {
 }
 class Bar1 : Foo() {
     override val x: Int = 3
+}
+
+fun main(args: Array<String>) {
+    People4()
 }

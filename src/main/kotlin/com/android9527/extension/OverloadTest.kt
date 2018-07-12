@@ -1,4 +1,4 @@
-package com.android9527.overload
+package com.android9527.extension
 
 /**
  * Created by chenfeiyue on 18/2/12.
@@ -19,10 +19,15 @@ fun checkVararg(vararg args: String, age: Int): Boolean {
  */
 fun main(args: Array<String>) {
     check("", "", "", 18)
-    check(name = "", mobile = "", id = "", age = 18)
-    check(age = 18, id = "", mobile = "")
+    check(id = "", age = 18)
+    check(id = "", age = 18, name = "", mobile = "")
+    check(age = 1)
+
+
     val array = arrayOf("1", "2")
-    checkVararg("1", "2", age = 18)
+
+    // *array叫做Spread Operator，作用是把Array展开然后作为可变参数的实参，Spread Operator不能重载。
+    checkVararg(*array, age = 18)
 
     // 具名参数
 //    check(age = 18, mobile = "180xxxxxxxx")
